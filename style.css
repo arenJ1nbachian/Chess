@@ -1,0 +1,40 @@
+body {
+  display: flex;
+  margin: 0;
+  justify-content: space-evenly;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+}
+
+.pawnPromotion {
+  width: 900px;
+  height: 269px;
+  display: none;
+  opacity: 0;
+}
+
+.box {
+  width: 90px;
+  height: 90px;
+}
+
+.box img {
+  display: block;
+  width: 90px;
+  height: 90px;
+}
+
+.promotionSelect {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.chessBoard,
+.pawnPromotion {
+  border-collapse: collapse;
+}
+.box,
+.promotionSelect {
+  border: 2px solid black;
+}
