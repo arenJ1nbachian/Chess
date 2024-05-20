@@ -15,5 +15,11 @@ git clone https://github.com/arenJ1nbachian/Chess.git
 ```
 
 -Go to the directory
--Run the chess.html file
+<br>
+-Open the terminal and install the dependencies "npm install"
+<br>
+-Type in the terminal "npm start"
+<br>
+-If your browser doesn't open up just type in "http://localhost:8000" in any desired browser
+<br>
 -Start playing
