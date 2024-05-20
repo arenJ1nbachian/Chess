@@ -6,7 +6,7 @@ const port = 8000;
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, "public")));
 
-// Send the index.html file when accessing the root URL
+// Send the chess.html file when accessing the root URL
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "chess.html"));
 });
