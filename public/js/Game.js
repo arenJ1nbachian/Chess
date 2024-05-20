@@ -107,8 +107,8 @@ export class Game {
             clickedPiece.availableMoves,
             "add" // Highlights possible moves for the piece.
           );
+          this.Rules.state = "Moving a piece";
         }
-        this.Rules.state = "Moving a piece";
       }
     }
   }
