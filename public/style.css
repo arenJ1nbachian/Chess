@@ -17,6 +17,8 @@ body {
 .box {
   width: 90px;
   height: 90px;
+  min-width: 90px;
+  min-height: 90px;
 }
 
 .box img {
