@@ -166,6 +166,9 @@ export class Game {
         "Result: Check detected, changing the gameSituation to Check!"
       );
       this.gameSituation = "Check";
+      const audio = new Audio("../audio/move-check.mp3");
+      audio.currentTime = 0;
+      audio.play();
       if (this.Rules.checkMateVerify()) {
         this.Rules.gameSituation = "CHECKMATE";
         console.log("GAME STOPPED: CHECKMATE");
@@ -197,6 +200,10 @@ export class Game {
           uiClick.row + 1
         }) \n `
       );
+
+      const isDestinationEmpty =
+        this.board.grid[uiClick.row][uiClick.column] === null;
+
       this.board.movePiece(this.Rules.selectedPiece.position, uiClick); // Moves the piece on the board.
       if (
         this.Rules.checkVerification(
@@ -205,9 +212,9 @@ export class Game {
           this.Rules.selectedPiece
         ) !== undefined
       ) {
-        console.log(
-          "Result: Check detected, changing the gameSituation to Check!"
-        );
+        const audio = new Audio("../audio/move-check.mp3");
+        audio.currentTime = 0;
+        audio.play();
         this.Rules.gameSituation = "Check";
         if (this.Rules.checkMateVerify()) {
           this.Rules.gameSituation = "CHECKMATE";
@@ -223,6 +230,15 @@ export class Game {
           $("table").off("click", "td");
         }
       } else {
+        if (isDestinationEmpty) {
+          const audio = new Audio("../audio/move-self.mp3");
+          audio.currentTime = 0;
+          audio.play();
+        } else {
+          const audio = new Audio("../audio/capture.mp3");
+          audio.currentTime = 0;
+          audio.play();
+        }
         console.log("Result: No Check detected! \n");
         this.gameSituation = "Casual";
         this.UI.updateInfo(
